@@ -1,8 +1,9 @@
-# dice_game
+# Dice Game
 
 ## Requirements
 
 > Let us code “The Game of Dice"
+
 The "Game of Dice" is a 4 player game where 4 players roll a 6 faced dice in a round-robin
 fashion. Each time a player rolls the dice their points increase by the number (1 to 6) achieved
 by the roll.
