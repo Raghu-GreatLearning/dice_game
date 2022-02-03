@@ -1,6 +1,5 @@
 require "./play_game.rb"
 
-
 score_board = {
     player_1: 0,
     player_2: 0,
