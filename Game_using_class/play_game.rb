@@ -16,7 +16,7 @@ require_relative "./getRanks.rb"
 # player_count = [1,2,3,4]
 
 class PlayGame
-    
+    @@popped = false
     def initialize(score_board, player_count,rank_records)
         @score_board = score_board
         @player_count = player_count
@@ -39,25 +39,28 @@ class PlayGame
             
             loop do
 
+                # puts turn
                 input(@player_count, turn)
     
                 dice = giveDice
     
+                # puts @player_count.inspect
+
                 print "\n\tPlayer-#{@player_count[turn-1]} get #{dice} Points\n"
-    
-                self.update_score("player_#{@player_count[turn-1]}", dice, turn)
+                
+                @@popped = self.update_score("player_#{@player_count[turn-1]}", dice, turn)
                 get_ranks(@score_board)
-    
+                
                 break if dice !=6
             end
-    
+            
+            break if @player_count.length ==1
             if turn >= @player_count.length
                 turn =1
-            else
+            elsif !@@popped
                 turn +=1
             end
     
-            break if @player_count.length == 0
         end
     
         print "\n\t Game Completed\n"
@@ -68,16 +71,18 @@ class PlayGame
     def update_score(player, score,turn)
         # puts "#{player.inspect}  == player"
         # puts "#{@score_board.inspect} == score_board"
-        
+        turn_check = false
         @score_board[:"#{player}"] +=score
         if @score_board[:"#{player}"] >= 10
             make_rank_list(player, @rank_records)
             print_ranks(@rank_records)
             @player_count.delete_at(turn-1)
+            turn_check = true
         end
 
         # puts @player_count.inspect
         # puts turn
+        turn_check
     end
 
 
