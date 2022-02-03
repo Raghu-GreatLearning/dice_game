@@ -5,7 +5,7 @@ module PressR
     def input(player_count, turn)
         loop do
             print "\nPlayer-#{player_count[turn-1]} turn, Press R to roll the dice : "
-            roll = gets.chomp
+            roll = gets.chomp.strip
             roll.downcase!
             break if roll == "r"
         end

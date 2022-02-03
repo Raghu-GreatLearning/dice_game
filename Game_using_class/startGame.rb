@@ -1,4 +1,4 @@
-require "./play_game.rb"
+require_relative "./play_game.rb"
 
 score_board = {
     player_1: 0,
@@ -12,7 +12,7 @@ player_count = [1,2,3,4]
 
 print "Press S to start the game :: "
 
-start_game = gets.chomp
+start_game = gets.chomp.strip
 start_game.downcase!
 
 if start_game == 's'

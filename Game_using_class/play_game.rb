@@ -1,8 +1,8 @@
-require "./genrate_random.rb"
-require "./pressR.rb"
-require "./makerankList.rb"
-require "./printRanks.rb"
-require "./getRanks.rb"
+require_relative "./genrate_random.rb"
+require_relative "./pressR.rb"
+require_relative "./makerankList.rb"
+require_relative "./printRanks.rb"
+require_relative "./getRanks.rb"
 
 
 # score_board = {
