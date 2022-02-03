@@ -54,17 +54,19 @@ class PlayGame
                 break if dice !=6
             end
             
+            # puts @player_count.inspect
+            
             break if @player_count.length ==1
             if turn >= @player_count.length
                 turn =1
             elsif !@@popped
                 turn +=1
             end
-    
         end
     
         print "\n\t Game Completed\n"
-    
+
+        # PlayAgain.play_again(re_game)
     end
 
 
