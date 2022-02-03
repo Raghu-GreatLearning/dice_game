@@ -1,5 +1,5 @@
-player_count = [1,2,3,4]
-turn =1
+# player_count = [1,2,3,4]
+# turn =1
 
 module PressR
     def input(player_count, turn)
